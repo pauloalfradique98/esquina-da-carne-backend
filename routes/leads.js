@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { GoogleSpreadsheet } = require("google-spreadsheet");
 const { JWT } = require("google-auth-library");
-const creds = require("../service-account.json"); // sua service account
+const creds = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_JSON); // sua service account
 
 async function salvarLead(nome, wpp) {
     try {
